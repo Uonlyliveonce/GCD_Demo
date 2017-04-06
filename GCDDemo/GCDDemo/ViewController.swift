@@ -45,6 +45,51 @@ class ViewController: UIViewController {
             })
         }
     }
+    @IBAction func barrier(_ sender: Any) {
+        print("begin")
+        let queue = DispatchQueue(label: "queue", attributes: .concurrent)
+        queue.async {
+            print("111-----\(Thread.current)")
+        }
+        queue.async {
+            print("222-----\(Thread.current)")
+        }
+        queue.async(group: nil, qos: .default, flags: .barrier) { 
+            print("barrier-----\(Thread.current)")
+        }
+        queue.async {
+            print("333-----\(Thread.current)")
+        }
+        queue.async {
+            print("444-----\(Thread.current)")
+        }
+        print("end")
+    }
+    @IBAction func after(_ sender: Any) {
+        button.setTitle("延时", for: .normal)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { 
+            self.button.setTitle("线程间通信", for: .normal)
+        }
+    }
+    @IBAction func group(_ sender: Any) {
+        let group = DispatchGroup()
+        let queue1 = DispatchQueue(label: "queue1")
+        queue1.async(group: group) {
+            for i in 1...10 {
+                print("111-----\(i)-----\(Thread.current)")
+            }
+            print("111:\(Thread.current)")
+        }
+        let queue2 = DispatchQueue(label:"queue2")
+        group.notify(queue: queue2) {
+            queue2.async {
+                for i in 1...10 {
+                    print("222-----\(i)-----\(Thread.current)")
+                }
+                print("222:\(Thread.current)")
+            }
+        }
+    }
 }
 
 

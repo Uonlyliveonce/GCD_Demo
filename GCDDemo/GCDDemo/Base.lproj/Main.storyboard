@@ -42,7 +42,6 @@
                                 <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="1t0-Ds-Ifi"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="IV9-yI-8IF"/>
                                 </constraints>
                                 <state key="normal" title="并行同步">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -56,7 +55,6 @@
                                 <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="uXk-I0-ygl"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="yp5-nX-5wj"/>
                                 </constraints>
                                 <state key="normal" title="并行异步">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -70,7 +68,6 @@
                                 <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="I6h-2q-tJr"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="kyR-ZT-b3B"/>
                                 </constraints>
                                 <state key="normal" title="串行同步">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -83,7 +80,6 @@
                                 <rect key="frame" x="61" y="208" width="253" height="30"/>
                                 <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="WPX-PJ-eYC"/>
                                     <constraint firstAttribute="height" constant="30" id="s2s-XB-AgF"/>
                                 </constraints>
                                 <state key="normal" title="串行异步">
@@ -97,7 +93,6 @@
                                 <rect key="frame" x="61" y="246" width="253" height="30"/>
                                 <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="2mn-Tx-jcB"/>
                                     <constraint firstAttribute="height" constant="30" id="r8D-kA-hhJ"/>
                                 </constraints>
                                 <state key="normal" title="主队列同步">
@@ -111,7 +106,6 @@
                                 <rect key="frame" x="61" y="284" width="253" height="30"/>
                                 <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="JFw-iv-MWq"/>
                                     <constraint firstAttribute="height" constant="30" id="ufF-15-Qq7"/>
                                 </constraints>
                                 <state key="normal" title="主队列异步">
@@ -125,9 +119,7 @@
                                 <rect key="frame" x="61" y="322" width="253" height="30"/>
                                 <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="CIn-WR-zck"/>
                                     <constraint firstAttribute="height" constant="30" id="XUK-xI-tXn"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="nHC-1i-M45"/>
                                 </constraints>
                                 <state key="normal" title="线程间通信">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -136,29 +128,77 @@
                                     <action selector="connection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KRQ-gd-gt1"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CoX-qo-fop">
+                                <rect key="frame" x="61" y="360" width="253" height="30"/>
+                                <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8FR-D2-MgR"/>
+                                </constraints>
+                                <state key="normal" title="线程阻碍">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="barrier:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Ac-Pt-Jdz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Brz-dj-7Fa">
+                                <rect key="frame" x="61" y="398" width="253" height="30"/>
+                                <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="AGb-Vc-QpP"/>
+                                </constraints>
+                                <state key="normal" title="延时">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="after:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7nb-6v-asD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ha-sZ-OdR">
+                                <rect key="frame" x="61" y="436" width="253" height="30"/>
+                                <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="JvO-E7-gVn"/>
+                                </constraints>
+                                <state key="normal" title="队列组">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="group:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Koh-fh-Veu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ejc-yF-mkH" secondAttribute="trailing" constant="61" id="1aK-mL-7hf"/>
+                            <constraint firstAttribute="trailing" secondItem="CoX-qo-fop" secondAttribute="trailing" constant="61" id="2VW-d4-h1X"/>
+                            <constraint firstItem="Brz-dj-7Fa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="61" id="3ME-oT-Oof"/>
+                            <constraint firstItem="CoX-qo-fop" firstAttribute="top" secondItem="l9d-b9-kUA" secondAttribute="bottom" constant="8" id="42p-yj-x9M"/>
                             <constraint firstItem="dkm-MH-xTq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="61" id="4dn-On-EyM"/>
                             <constraint firstItem="dkm-MH-xTq" firstAttribute="top" secondItem="2t8-U9-1UD" secondAttribute="bottom" constant="8" id="97u-G1-eIB"/>
                             <constraint firstItem="jV3-86-HhQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="61" id="Ama-Hg-v65"/>
                             <constraint firstItem="dkm-MH-xTq" firstAttribute="top" secondItem="2t8-U9-1UD" secondAttribute="bottom" constant="8" id="B0D-zS-0Hh"/>
+                            <constraint firstItem="5Ha-sZ-OdR" firstAttribute="top" secondItem="Brz-dj-7Fa" secondAttribute="bottom" constant="8" id="D0f-7C-JfX"/>
                             <constraint firstItem="bAz-gb-p6r" firstAttribute="top" secondItem="r6B-gy-Z9S" secondAttribute="bottom" constant="8" id="HwT-OU-ar7"/>
                             <constraint firstAttribute="trailing" secondItem="2t8-U9-1UD" secondAttribute="trailing" constant="61" id="Jef-Vi-r38"/>
                             <constraint firstItem="2t8-U9-1UD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="61" id="M2Z-ln-vFz"/>
                             <constraint firstItem="bAz-gb-p6r" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="61" id="M2u-Ii-xKV"/>
+                            <constraint firstAttribute="trailing" secondItem="5Ha-sZ-OdR" secondAttribute="trailing" constant="61" id="Osj-43-izb"/>
                             <constraint firstAttribute="trailing" secondItem="l9d-b9-kUA" secondAttribute="trailing" constant="61" id="PxF-ru-kd0"/>
                             <constraint firstItem="jV3-86-HhQ" firstAttribute="top" secondItem="bAz-gb-p6r" secondAttribute="bottom" constant="8" id="Qmj-JC-Jeb"/>
+                            <constraint firstItem="CoX-qo-fop" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="61" id="S2w-x1-ZhD"/>
                             <constraint firstItem="r6B-gy-Z9S" firstAttribute="top" secondItem="dkm-MH-xTq" secondAttribute="bottom" constant="8" id="TIU-Go-klO"/>
                             <constraint firstItem="r6B-gy-Z9S" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="61" id="Umm-RX-ZCA"/>
+                            <constraint firstItem="5Ha-sZ-OdR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="61" id="Y3P-8D-ru3"/>
                             <constraint firstItem="l9d-b9-kUA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="61" id="b4r-wt-HEM"/>
                             <constraint firstItem="jV3-86-HhQ" firstAttribute="top" secondItem="bAz-gb-p6r" secondAttribute="bottom" constant="8" id="dTq-xd-NGa"/>
+                            <constraint firstItem="Brz-dj-7Fa" firstAttribute="top" secondItem="CoX-qo-fop" secondAttribute="bottom" constant="8" id="eI1-CE-ErV"/>
                             <constraint firstAttribute="trailing" secondItem="r6B-gy-Z9S" secondAttribute="trailing" constant="61" id="fLa-J2-6N8"/>
                             <constraint firstItem="bAz-gb-p6r" firstAttribute="top" secondItem="r6B-gy-Z9S" secondAttribute="bottom" constant="8" id="fRw-F4-Ink"/>
                             <constraint firstItem="r6B-gy-Z9S" firstAttribute="top" secondItem="dkm-MH-xTq" secondAttribute="bottom" constant="8" id="hD2-2J-AI9"/>
                             <constraint firstItem="ejc-yF-mkH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="61" id="hHd-CA-ps7"/>
                             <constraint firstItem="ejc-yF-mkH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="hyl-Y2-fD5"/>
+                            <constraint firstAttribute="trailing" secondItem="Brz-dj-7Fa" secondAttribute="trailing" constant="61" id="mgZ-YF-xbb"/>
                             <constraint firstItem="2t8-U9-1UD" firstAttribute="top" secondItem="ejc-yF-mkH" secondAttribute="bottom" constant="8" id="pRh-md-RMr"/>
                             <constraint firstAttribute="trailing" secondItem="jV3-86-HhQ" secondAttribute="trailing" constant="61" id="rfK-0i-9ov"/>
                             <constraint firstItem="2t8-U9-1UD" firstAttribute="top" secondItem="ejc-yF-mkH" secondAttribute="bottom" constant="8" id="wyC-j0-u0N"/>
@@ -278,7 +318,6 @@
                                 <rect key="frame" x="77" y="322" width="221" height="30"/>
                                 <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="3jD-bG-tNx"/>
                                     <constraint firstAttribute="height" constant="30" id="UfK-nk-EGs"/>
                                 </constraints>
                                 <state key="normal" title="线程间通信">
@@ -288,27 +327,76 @@
                                     <action selector="connection:" destination="mXS-Jc-fk6" eventType="touchUpInside" id="XFo-yW-a9X"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2x-3C-0tb">
+                                <rect key="frame" x="77" y="360" width="221" height="30"/>
+                                <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8sG-Hx-j4j"/>
+                                </constraints>
+                                <state key="normal" title="线程阻碍">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="barrier:" destination="mXS-Jc-fk6" eventType="touchUpInside" id="pYu-Xy-ISp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3k-kg-ALr">
+                                <rect key="frame" x="77" y="398" width="221" height="30"/>
+                                <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cae-GS-YND"/>
+                                </constraints>
+                                <state key="normal" title="延时">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="after:" destination="mXS-Jc-fk6" eventType="touchUpInside" id="QDQ-Qj-SQ1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NH6-q0-zLD">
+                                <rect key="frame" x="77" y="436" width="221" height="30"/>
+                                <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Sqp-hM-cg1"/>
+                                </constraints>
+                                <state key="normal" title="队列组">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="after:" destination="mXS-Jc-fk6" eventType="touchUpInside" id="V2y-qO-156"/>
+                                    <action selector="group:" destination="mXS-Jc-fk6" eventType="touchUpInside" id="HFh-Aa-J4n"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="G3k-kg-ALr" firstAttribute="leading" secondItem="kLD-Zy-mjz" secondAttribute="leading" constant="77" id="5Hs-8Y-gqU"/>
+                            <constraint firstItem="NH6-q0-zLD" firstAttribute="leading" secondItem="kLD-Zy-mjz" secondAttribute="leading" constant="77" id="676-2q-qWq"/>
                             <constraint firstItem="vLa-cF-Rd7" firstAttribute="leading" secondItem="kLD-Zy-mjz" secondAttribute="leading" constant="77" id="6Ds-ad-WZp"/>
                             <constraint firstItem="h9v-my-AVM" firstAttribute="top" secondItem="IYp-5V-rCr" secondAttribute="bottom" constant="30" id="6rg-oo-DAY"/>
                             <constraint firstItem="4AZ-UE-Zvc" firstAttribute="leading" secondItem="kLD-Zy-mjz" secondAttribute="leading" constant="77" id="C5a-TK-L4g"/>
                             <constraint firstItem="Kgb-tD-5jr" firstAttribute="leading" secondItem="kLD-Zy-mjz" secondAttribute="leading" constant="77" id="FOm-XC-f4r"/>
                             <constraint firstItem="h9v-my-AVM" firstAttribute="centerX" secondItem="kLD-Zy-mjz" secondAttribute="centerX" id="Gcf-ah-yjd"/>
                             <constraint firstAttribute="trailing" secondItem="c3q-SC-gWR" secondAttribute="trailing" constant="77" id="GmG-uP-GUJ"/>
+                            <constraint firstItem="n2x-3C-0tb" firstAttribute="leading" secondItem="kLD-Zy-mjz" secondAttribute="leading" constant="77" id="HaH-rf-jWA"/>
+                            <constraint firstAttribute="trailing" secondItem="NH6-q0-zLD" secondAttribute="trailing" constant="77" id="JXd-qc-j1K"/>
                             <constraint firstItem="c3q-SC-gWR" firstAttribute="top" secondItem="9fZ-9Q-WcD" secondAttribute="bottom" constant="8" id="KAm-e5-3Ek"/>
                             <constraint firstAttribute="trailing" secondItem="vLa-cF-Rd7" secondAttribute="trailing" constant="77" id="SLU-Dh-HHt"/>
                             <constraint firstItem="4AZ-UE-Zvc" firstAttribute="top" secondItem="Kgb-tD-5jr" secondAttribute="bottom" constant="8" id="VHo-V3-mO6"/>
                             <constraint firstItem="c3q-SC-gWR" firstAttribute="leading" secondItem="kLD-Zy-mjz" secondAttribute="leading" constant="77" id="WWC-T9-t6n"/>
+                            <constraint firstAttribute="trailing" secondItem="G3k-kg-ALr" secondAttribute="trailing" constant="77" id="XJ5-TG-3Ua"/>
                             <constraint firstItem="6Pt-cc-mhx" firstAttribute="top" secondItem="vLa-cF-Rd7" secondAttribute="bottom" constant="8" id="XPg-Qk-fzG"/>
                             <constraint firstItem="Kgb-tD-5jr" firstAttribute="top" secondItem="6Pt-cc-mhx" secondAttribute="bottom" constant="8" id="ZWo-A9-CKv"/>
+                            <constraint firstItem="NH6-q0-zLD" firstAttribute="top" secondItem="G3k-kg-ALr" secondAttribute="bottom" constant="8" id="aWU-f3-Cta"/>
                             <constraint firstItem="vLa-cF-Rd7" firstAttribute="top" secondItem="c3q-SC-gWR" secondAttribute="bottom" constant="8" id="aan-KC-sRf"/>
                             <constraint firstAttribute="trailing" secondItem="6Pt-cc-mhx" secondAttribute="trailing" constant="77" id="awQ-Kx-c0f"/>
                             <constraint firstItem="h9v-my-AVM" firstAttribute="leading" secondItem="kLD-Zy-mjz" secondAttribute="leading" constant="77" id="f4D-G7-FWF"/>
                             <constraint firstItem="9fZ-9Q-WcD" firstAttribute="leading" secondItem="kLD-Zy-mjz" secondAttribute="leading" constant="77" id="i8S-bn-ucz"/>
                             <constraint firstAttribute="trailing" secondItem="h9v-my-AVM" secondAttribute="trailing" constant="77" id="q87-N4-0c1"/>
                             <constraint firstAttribute="trailing" secondItem="9fZ-9Q-WcD" secondAttribute="trailing" constant="77" id="qxc-fq-Thi"/>
+                            <constraint firstAttribute="trailing" secondItem="n2x-3C-0tb" secondAttribute="trailing" constant="77" id="rMD-9G-2gy"/>
+                            <constraint firstItem="n2x-3C-0tb" firstAttribute="top" secondItem="4AZ-UE-Zvc" secondAttribute="bottom" constant="8" id="t22-SZ-o1P"/>
+                            <constraint firstItem="G3k-kg-ALr" firstAttribute="top" secondItem="n2x-3C-0tb" secondAttribute="bottom" constant="8" id="tCq-UZ-bUA"/>
                             <constraint firstAttribute="trailing" secondItem="4AZ-UE-Zvc" secondAttribute="trailing" constant="77" id="uTx-C8-7kY"/>
                             <constraint firstAttribute="trailing" secondItem="Kgb-tD-5jr" secondAttribute="trailing" constant="77" id="vKX-rx-dzg"/>
                             <constraint firstItem="9fZ-9Q-WcD" firstAttribute="top" secondItem="h9v-my-AVM" secondAttribute="bottom" constant="8" id="vuk-65-Wc4"/>

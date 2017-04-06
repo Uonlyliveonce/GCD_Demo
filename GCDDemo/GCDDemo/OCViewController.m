@@ -8,6 +8,17 @@
 
 #import "OCViewController.h"
 
+
+@interface Sark : NSObject
+@property (nonatomic, copy) NSString *name;
+- (void)speak;
+@end
+@implementation Sark
+- (void)speak {
+    NSLog(@"my name's %@", self.name);
+}
+@end
+
 @interface OCViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *button;
 
@@ -17,11 +28,52 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    dispatch_queue_t queue = dispatch_queue_create("queue", DISPATCH_QUEUE_CONCURRENT);
+//    BOOL res1 = [(id)[NSObject class] isKindOfClass:[NSObject class]];
+//    BOOL res2 = [(id)[NSObject class] isMemberOfClass:[NSObject class]];
+//    BOOL res3 = [(id)[Sark class] isKindOfClass:[Sark class]];
+//    BOOL res4 = [(id)[Sark class] isMemberOfClass:[Sark class]];
+//    
+//    NSLog(@"%d %d %d %d", res1, res2, res3, res4);
+//    NSLog(@"ViewController = %@ , 地址 = %p", self, &self);
+//    
+//    id cls = [Sark class];
+//    NSLog(@"Sark class = %@ 地址 = %p", cls, &cls);
+//    
+//    void *obj = &cls;
+//    NSLog(@"Void *obj = %@ 地址 = %p", obj,&obj);
+//    
+//    [(__bridge id)obj speak];
+//    
+//    Sark *sark = [[Sark alloc]init];
+//    NSLog(@"Sark instance = %@ 地址 = %p",sark,&sark);
+//    
+//    [sark speak];
     
-    dispatch_async(queue, ^{
-        [self syncMain];
-    });
+    
+    
+    NSLog(@"ViewController = %@ , 地址 = %p", self, &self);
+    
+//    NSString *myName = @"halfrost";
+    
+    
+    id cls = [Sark class];
+    NSLog(@"Sark class = %@ 地址 = %p", cls, &cls);
+    
+    void *obj = &cls;
+    NSLog(@"Void *obj = %@ 地址 = %p", obj,&obj);
+    
+    [(__bridge id)obj speak];
+    
+    Sark *sark = [[Sark alloc]init];
+    NSLog(@"Sark instance = %@ 地址 = %p",sark,&sark);
+    
+    [sark speak];
+    
+//    dispatch_queue_t queue = dispatch_queue_create("queue", DISPATCH_QUEUE_CONCURRENT);
+//
+//    dispatch_async(queue, ^{
+//        [self syncMain];
+//    });
     
 }
 
@@ -74,7 +126,51 @@
         });
     });
 }
+- (IBAction)barrier:(id)sender {
+    dispatch_queue_t queue = dispatch_queue_create("queue", DISPATCH_QUEUE_CONCURRENT);
+    
+    dispatch_async(queue, ^{
+        NSLog(@"111-----%@", [NSThread currentThread]);
+    });
+    
+    dispatch_async(queue, ^{
+        NSLog(@"222-----%@", [NSThread currentThread]);
+    });
+    
+    dispatch_barrier_async(queue, ^{
+        NSLog(@"----barrier-----%@", [NSThread currentThread]);
+    });
+    
+    dispatch_async(queue, ^{
+        NSLog(@"333-----%@", [NSThread currentThread]);
+    });
+    
+    dispatch_async(queue, ^{
+        NSLog(@"444-----%@", [NSThread currentThread]);
+    });
+}
+- (IBAction)after:(id)sender {
+    [_button setTitle:@"延时" forState:(UIControlStateNormal)];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [_button setTitle:@"线程间通信" forState:(UIControlStateNormal)];
+    });
+}
 
+- (IBAction)group:(id)sender {
+    dispatch_group_t group =  dispatch_group_create();
+    dispatch_queue_t queue1 = dispatch_queue_create("queue1", DISPATCH_QUEUE_SERIAL);
+    dispatch_group_async(group, queue1, ^{
+        for (int i = 0; i < 10; i++) {
+            NSLog(@"111-----%d-----%@",i,[NSThread currentThread]);
+        }
+    });
+    dispatch_queue_t queue2 = dispatch_queue_create("queue2", DISPATCH_QUEUE_SERIAL);
+    dispatch_group_notify(group, queue2, ^{
+        for (int i = 0; i < 10; i++) {
+            NSLog(@"222-----%d-----%@",i,[NSThread currentThread]);
+        }
+    });
+}
 
 
 
